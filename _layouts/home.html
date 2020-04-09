@@ -5,16 +5,34 @@ layout: default
   {% for item in site.data.fittingData %}
   <div class="card shadow">
     <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
-    <div class="card-body">
-      <h3 class="card-title mb-0">{{ item.title }}</h3>
-    </div>
     <div class="card-footer bg-white">
       <div class="row justify-content-between align-items-center">
         {% if item.sparcDigital %}
         <div class="col-auto">
-          <a href="{{ item.sparcDigital }}" class="text-dark">
-            <i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top" title="Learn more information about this image at SPARC Digital"></i>
-          </a>
+          <!-- Button trigger modal -->
+          <button type="button" class="p-0 border-0 bg-white" data-toggle="modal" data-target="#info{{ forloop.index }}">
+            <i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top" title="More information about this image"></i>
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="info{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="info{{ forloop.index }}Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="modal-title">
+                    <i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top" title="More information about this image"></i>
+                  </div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4 id="info{{ forloop.index }}Label">{{ item.title }}</h4>
+                  <h5 class="text-muted mb-4">{{ item.creator }}</h5>
+                  <p>Learn more about this image on <a href="{{ item.sparcDigital }}">SPARC Digital</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         {% endif %}
         {% if item.qr %}
@@ -28,7 +46,7 @@ layout: default
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="QR{{ forloop.index }}Label">QR Code</h5>
+                  <h4 class="modal-title" id="QR{{ forloop.index }}Label">QR Code</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>

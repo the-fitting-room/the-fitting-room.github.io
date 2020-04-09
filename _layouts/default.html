@@ -66,8 +66,13 @@
   <script src="https://kit.fontawesome.com/1ddf8635da.js" crossorigin="anonymous"></script>
   <script type="text/javascript">
     $(function() {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
+      $('[data-toggle="tooltip"]').tooltip({
+        trigger: "hover"
+      });
+      $('[data-toggle="tooltip"]').click(function() {
+        $(this).tooltip('hide');
+      });
+    });
   </script>
 </body>
 

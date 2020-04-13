@@ -16,25 +16,33 @@
 
 <body class="d-flex flex-column h-100">
   <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
-  <header class="container py-4 flex-shrink-0">
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <a href="/" class="logo">
-          <h1 class="sr-only">The FITting Room</h1>
-          <img src="/assets/images/fittingRoom-logo.png" alt="The FITing Room logo">
-        </a>
+  <header class="jumbotron jumbotron-fluid flex-shrink-0 border-bottom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <a href="/" class="logo">
+            <h1 class="sr-only">The FITting Room</h1>
+            <img src="/assets/images/fittingRoom-logo.png" alt="The FITing Room logo">
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-center mt-2">
-      <div class="col-auto">
-        <h2 class="tag">Try on a piece of history</h2>
+      <div class="row justify-content-center mt-2">
+        <div class="col-auto">
+          <h2 class="tag">Try on a piece of history</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div class="col-lg-8 col-xl-6">
+          <p class="lead">This new Augmented Reality experience from the FIT Library allows you to interact with rare and unique materials from our Special Collections and College Archives (SPARC). Try on a
+            new hat, scarf, or a pair of earrings! </p>
+          <p class="lead mb-0"> Press <i class="fas fa-play-circle" title="Play"></i> to launch the experience from your smartphone or webcam-enabled computer. Or click <i class="fas fa-qrcode" title="QR code"></i> to grab a
+            QR Code you can scan with your smartphone. Use <i class="fas fa-info-circle" title="Information"></i> to read more about these historic items. And finally, don't forget to share your selfie on social using #thefittingroom.</p>
+        </div>
       </div>
     </div>
   </header>
   <main role="main" class="flex-shrink-0 my-4" id="main">
-    <div class="container">
-      {{ content }}
-    </div>
+    {{ content }}
   </main>
   <footer class="mt-auto py-5 bg-light border-top">
     <div class="container text-center small">

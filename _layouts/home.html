@@ -1,78 +1,80 @@
 ---
 layout: default
 ---
-<div class="card-columns">
-  {% for item in site.data.fittingData %}
-  <div class="card shadow">
-    <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
-    <div class="card-footer bg-white">
-      <div class="row justify-content-between align-items-center">
-        {% if item.sparcDigital %}
-        <div class="col-auto">
-          <!-- Button trigger modal -->
-          <button type="button" class="p-0 border-0 bg-white" data-toggle="modal" data-target="#info{{ forloop.index }}">
-            <i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top" title="More information about this image"></i>
-          </button>
-          <!-- Modal -->
-          <div class="modal fade" id="info{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="info{{ forloop.index }}Label" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <div class="modal-title">
-                    <i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top" title="More information about this image"></i>
+<div class="container">
+  <div class="card-columns">
+    {% for item in site.data.fittingData %}
+    <div class="card shadow">
+      <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
+      <div class="card-footer bg-white">
+        <div class="row justify-content-between align-items-center">
+          {% if item.deepLink %}
+          <div class="col-auto">
+            <a href="{{ item.deepLink }}" class="text-dark">
+              <i class="fas fa-play-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Launch AR experience from your browser. Requires front-facing camera or webcam."></i>
+            </a>
+          </div>
+          {% endif %}
+          {% if item.qr %}
+          <div class="col-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="p-0 border-0 bg-white" data-toggle="modal" data-target="#QR{{ forloop.index }}">
+              <i class="fas fa-qrcode fa-2x" data-toggle="tooltip" data-placement="top" title="Access a QR code to scan with your smartphone"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="QR{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="QR{{ forloop.index }}Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="QR{{ forloop.index }}Label">QR Code</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <h4 id="info{{ forloop.index }}Label">{{ item.title }}</h4>
-                  <h5 class="text-muted mb-4">{{ item.creator }}</h5>
-                  <p>Learn more about this image on <a href="{{ item.sparcDigital }}">SPARC Digital</a>.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endif %}
-        {% if item.qr %}
-        <div class="col-auto">
-          <!-- Button trigger modal -->
-          <button type="button" class="p-0 border-0 bg-white" data-toggle="modal" data-target="#QR{{ forloop.index }}">
-            <i class="fas fa-qrcode fa-lg" data-toggle="tooltip" data-placement="top" title="Access a QR code to scan with your smartphone"></i>
-          </button>
-          <!-- Modal -->
-          <div class="modal fade" id="QR{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="QR{{ forloop.index }}Label" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title" id="QR{{ forloop.index }}Label">QR Code</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <img src="/assets/images/qr/{{ item.qr }}" alt="QR Code to lanch AR experience" class="w-100">
-                </div>
-                <div class="modal-footer">
-                  <p>Please scan this QR code using the camera on your smartphone to launch the AR experience. Alternately, if the device you are using has a front-facing camera or webcam, you can launch the experience directly by clicking on this <a
-                      href="{{ item.deepLink }}" title="Launch AR experience from your browser. Requires front-facing camera or webcam.">link</a>. You may need to give <em>Zappar</em> (the application that powers the AR experience) permission to
-                    access your camera.</p>
+                  <div class="modal-body">
+                    <img src="/assets/images/qr/{{ item.qr }}" alt="QR Code to lanch AR experience" class="w-100">
+                  </div>
+                  <div class="modal-footer">
+                    <p>Please scan this QR code using the camera on your smartphone to launch the AR experience. Alternately, if the device you are using has a front-facing camera or webcam, you can launch the experience directly by clicking on this
+                      <a href="{{ item.deepLink }}" title="Launch AR experience from your browser. Requires front-facing camera or webcam.">link</a>. You may need to give <em>Zappar</em> (the application that powers the AR experience) permission to
+                      access your camera.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          {% endif %}
+          {% if item.sparcDigital %}
+          <div class="col-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="p-0 border-0 bg-white" data-toggle="modal" data-target="#info{{ forloop.index }}">
+              <i class="fas fa-info-circle fa-2x" data-toggle="tooltip" data-placement="top" title="More information about this image"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="info{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="info{{ forloop.index }}Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class="modal-title">
+                      <i class="fas fa-info-circle fa-2x" data-toggle="tooltip" data-placement="top" title="More information about this image"></i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h4 id="info{{ forloop.index }}Label">{{ item.title }}</h4>
+                    <h5 class="text-muted mb-4">{{ item.creator }}</h5>
+                    <p>Learn more about this image on <a href="{{ item.sparcDigital }}">SPARC Digital</a>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
-        {% if item.deepLink %}
-        <div class="col-auto">
-          <a href="{{ item.deepLink }}" class="text-dark">
-            <i class="fas fa-play-circle fa-lg" data-toggle="tooltip" data-placement="top" title="Launch AR experience from your browser. Requires front-facing camera or webcam."></i>
-          </a>
-        </div>
-        {% endif %}
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>

@@ -6,10 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Icon -->
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- styles -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css" />
+  <link rel="stylesheet" href="/assets/style.css" />
 
   <title>{{ site.title }}</title>
 </head>
@@ -43,24 +47,30 @@
     {{ content }}
   </main>
   <footer class="mt-auto py-5 bg-light border-top">
-    <div class="container text-center small">
-      <a href="https://www.fitnyc.edu">
-        <img class="mb-3" src="/assets/images/wordmark-black-1-line.png" alt="FIT SUNY Logo" id="fit-logo">
-      </a>
-      <p>
-        ©{{ "now" | date: "%Y" }} Fashion Institute of Technology
-        <br>
-        All rights reserved.
-      </p>
-      <p>This site is an initiative of the FIT Library.</p>
-      <ul class="list-inline mb-0">
-        <li class="list-inline-item"><a class="text-muted" href="https://www.fitnyc.edu/library/" aria-label="FIT Library Homepage"><i class="fas fa-home" aria-hidden="" title="FIT Library Homepage"></i></a></li>
-        <li class="list-inline-item"><a class="text-muted" href="https://www.facebook.com/FITLibrary" aria-label="FIT Library Facebook"><i class="fab fa-facebook" aria-hidden="" title="FIT Library Facebook"></i></a></li>
-        <li class="list-inline-item"><a class="text-muted" href="https://twitter.com/FITLibrary" aria-label="FIT Library Twitter"><i class="fab fa-twitter" aria-hidden="" title="FIT Library Twitter"></i></a></li>
-        <li class="list-inline-item"><a class="text-muted" href="http://pinterest.com/fitlibrary/" aria-label="FIT Library Pinterest"><i class="fab fa-pinterest-p" aria-hidden="" title="FIT Library Pinterest"></i></a></li>
-        <li class="list-inline-item"><a class="text-muted" href="https://www.instagram.com/fitnyclibrary/" aria-label="FIT Library Instagram"><i class="fab fa-instagram" aria-hidden="" title="FIT Library Instagram"></i></a></li>
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-5">
+          <a href="https://www.fitnyc.edu">
+            <img class="mb-3" src="/assets/images/wordmark-black-1-line.png" alt="FIT SUNY Logo" id="fit-logo">
+          </a>
+          <p class="small">
+            ©{{ "now" | date: "%Y" }} Fashion Institute of Technology
+            <br>
+            All rights reserved.
+          </p>
+          <p class="text-left">This site is an initiative of the FIT Library and features rare and unique materials from our <a href="http://www.fitnyc.edu/library/sparc/">Special Collections and College Archives (SPARC)</a>. The Augmented Reality
+            experience was
+            built using the <a href="https://www.zappar.com/">Zappar</a> platform.</p>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a class="text-muted" href="https://www.fitnyc.edu/library/" aria-label="FIT Library Homepage"><i class="fas fa-home" aria-hidden="" title="FIT Library Homepage"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted" href="https://www.facebook.com/FITLibrary" aria-label="FIT Library Facebook"><i class="fab fa-facebook" aria-hidden="" title="FIT Library Facebook"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted" href="https://twitter.com/FITLibrary" aria-label="FIT Library Twitter"><i class="fab fa-twitter" aria-hidden="" title="FIT Library Twitter"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted" href="http://pinterest.com/fitlibrary/" aria-label="FIT Library Pinterest"><i class="fab fa-pinterest-p" aria-hidden="" title="FIT Library Pinterest"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted" href="https://www.instagram.com/fitnyclibrary/" aria-label="FIT Library Instagram"><i class="fab fa-instagram" aria-hidden="" title="FIT Library Instagram"></i></a></li>
 
-      </ul>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
 

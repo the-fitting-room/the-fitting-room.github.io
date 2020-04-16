@@ -4,17 +4,19 @@ layout: default
 <div class="container">
   <div class="card-columns">
     {% for item in site.data.fittingData %}
+    {% if item.deepLink %}
     <div class="card shadow">
-      <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
+      <a href="{{ item.deepLink }}">
+        <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
+      </a>
       <div class="card-footer bg-white">
         <div class="row justify-content-between align-items-center">
-          {% if item.deepLink %}
           <div class="col-auto">
             <a href="{{ item.deepLink }}" class="text-dark">
               <i class="fas fa-play-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Launch AR experience from your browser. Requires front-facing camera or webcam."></i>
             </a>
           </div>
-          {% endif %}
+
           {% if item.qr %}
           <div class="col-auto">
             <!-- Button trigger modal -->
@@ -44,6 +46,7 @@ layout: default
             </div>
           </div>
           {% endif %}
+
           {% if item.sparcDigital %}
           <div class="col-auto">
             <!-- Button trigger modal -->
@@ -75,6 +78,7 @@ layout: default
         </div>
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </div>

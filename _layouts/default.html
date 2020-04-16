@@ -37,8 +37,10 @@
       </div>
       <div class="row justify-content-center mt-3">
         <div class="col-lg-8 col-xl-6">
-          <p class="lead">This new Augmented Reality experience from the FIT Library allows you to try on accessories featured in original fashion sketches. Just press <i class="fas fa-play-circle" title="Play"></i> to launch the experience. Or click
-            <i class="fas fa-qrcode" title="QR code"></i> to grab a QR Code. Share it with <a href="https://www.instagram.com/explore/tags/SPARCfittingroom/?hl=en">#SPARCfittingroom</a>.</p>
+          <p class="lead">This new Augmented Reality experience from the FIT Library allows you to try on accessories featured in original fashion sketches. Just press <i class="fas fa-play-circle" data-toggle="tooltip" data-placement="top"
+              title="Click on the 'play' button below each image to launch the AR experience"></i> to launch the experience. Or click
+            <i class="fas fa-qrcode" data-toggle="tooltip" data-placement="top" title="Click on the 'QR' button below each image to grab a code you can scan with your smartphone"></i> to grab a QR Code. Share it with <a
+              href="https://www.instagram.com/explore/tags/SPARCfittingroom/?hl=en">#SPARCfittingroom</a></p>
         </div>
       </div>
     </div>
@@ -85,8 +87,8 @@
       $('[data-toggle="tooltip"]').tooltip({
         trigger: "hover"
       });
-      $('[data-toggle="tooltip"]').click(function() {
-        $(this).tooltip('hide');
+      $('.modal').on('show.bs.modal', function(e) {
+        $(e.relatedTarget).children('[data-toggle="tooltip"]').tooltip('hide');
       });
     });
   </script>
